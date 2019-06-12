@@ -1,33 +1,38 @@
-.searchBar{
+.searchBar {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-.imgs-left{
+
+.imgs-left {
     height: 100px;
     width: 33%;
     display: flex;
     justify-content: flex-start;
     align-items: center; 
 }
-.imgs-right{
+
+.imgs-right {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 25%;
 }
-.logo{
+
+.logo {
     width: 10%;
 
 }
-.name-logo{
+
+.name-logo {
     width:200px;
     margin-left: 20px;
     padding:10px;
     border-left: 2px solid lightgrey;
     margin-top: 15px;
 }
-input{
+
+input {
     text-align: center;
     width:175px;
     height:20px;
@@ -35,6 +40,7 @@ input{
     border-style: none;
     border:1px solid black;
 }
-.icon{
+
+.icon {
     color:black;
 }
