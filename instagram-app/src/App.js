@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
-import PostsPage from './components/PostContainer/PostsPage'
-import Authenticate from './components/Authentication/Authenticate'
-import LoginPage from './components/Login/LoginPage'
-
-const Loggedin = Authenticate(PostsPage);
-const FailedLogin = Authenticate(LoginPage);
+import PostsPage from './components/PostContainer/PostsPage';
+import Authenticate from './components/Authentication/Authenticate';
+import { AppWrapper } from './components/Reusable/App';
 class App extends Component {
-  constructor() {
-    super();
-  }
-  render() {
-    return(
-      <div className="App">
-        <PostsPage />
-      </div>
-    );
-  }
+    constructor() {
+        super();
+        this.state = {}
+    }
+
+    render() {
+        return (
+            <AppWrapper>
+
+                <PostsPage />
+                
+            </AppWrapper>
+        );
+    }
 }
 
 export default Authenticate(App);

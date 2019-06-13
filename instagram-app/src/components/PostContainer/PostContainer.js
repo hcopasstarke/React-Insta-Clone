@@ -1,21 +1,21 @@
 import React from 'react';
-import Comments from '../CommentSection/CommentSection';
+import Post from './Post';
+import { PostContainers } from '../Reusable/PostContainer';
 
+const PostContainer = props => {
+    let data = props.data;
+    let search = props.searchString.trim().toLowerCase();
 
-const PostContainer = props =>{
-    return(
-            <div>
-                <div className="post-header">
-                    <img src={props.obj.thumbnailUrl} alt="User Profile Logo" />
-                    
-                    <h1>{props.obj.username}</h1>
-                </div>
-                <div className="post-img-container">
-                    <img src={props.obj.imageUrl} alt={props.obj.username} />
-                </div>
-            <Comments commentArray={props.obj.comments} likes={props.obj.likes}/>
-        </div>
-    )
+    if (search.length > 0) {
+        data = data.filter(user => user.username.toLowerCase().match(search));
+    }
+
+    return (
+        <PostContainers>
+            {data.map((data, index) => {
+                return <Post key={data.username + index} id={index} data={data} />
+            })}
+        </PostContainers>);
 }
 
 export default PostContainer;
